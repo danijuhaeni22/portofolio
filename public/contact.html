@@ -4,19 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Me</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Poppins", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
   </head>
-  <body>
-    <h1>You Can Contact Me In</h1>
-    <ul>
-      <li>
-        LinkedIn :
-        <a href="https://www.linkedin.com/in/dani-juhaeni-0142a1170/"
-          >Dani Juhaeni</a
-        >
-      </li>
-      <li>Email : danijuhaeni22@gmail.com</li>
-      <li>Telp : 081299204447</li>
-    </ul>
-    <a href="../index.html">Back to Resume</a>
+  <body class="bg-gray-100 text-gray-900 font-sans">
+    <div class="max-w-3xl mx-auto my-10 p-6 bg-white rounded-lg shadow">
+      <h1 class="text-2xl font-semibold text-blue-800">You Can Contact Me In</h1>
+      <ul class="list-disc pl-6 mt-4 space-y-1">
+        <li>
+          LinkedIn :
+          <a class="text-blue-600 font-semibold hover:underline" href="https://www.linkedin.com/in/dani-juhaeni-0142a1170/">Dani Juhaeni</a>
+        </li>
+        <li>Email : danijuhaeni22@gmail.com</li>
+        <li>Telp : 081299204447</li>
+      </ul>
+      <nav class="mt-6 text-center">
+        <a class="text-blue-600 font-semibold hover:underline" href="../index.html">Back to Resume</a>
+      </nav>
+    </div>
   </body>
 </html>

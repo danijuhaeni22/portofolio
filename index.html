@@ -4,95 +4,119 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Resume</title>
-  </head>
-  <body>
-    <h1>Dani Juhaeni</h1>
-    <img
-      src="./assets/img/1811501269_foto.jpg"
-      alt="Profile photo of Dani Juhaeni"
-      width="200px"
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
     />
-    <h2>Summary</h2>
-    <p>
-      As a graduate with a Bachelor's degree in Informatics Engineering from
-      Budi Luhur University with a GPA of 3.80, I have the ability to
-      collaborate effectively within teams due to my experiences in
-      organizations and committees. I have a strong interest in Web Development.
-      Additionally, I am skilled in using various technologies such as HTML,
-      CSS, JS, React, Node.js, Laravel, and MySQL.
-    </p>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Poppins", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-100 text-gray-900 font-sans">
+    <div class="max-w-3xl mx-auto my-10 p-6 bg-white rounded-lg shadow">
+      <div class="text-center">
+        <h1 class="text-3xl font-bold text-blue-800">Dani Juhaeni</h1>
+        <img
+          src="./assets/img/1811501269_foto.jpg"
+          alt="Profil"
+          class="w-48 h-48 object-cover rounded-full mx-auto mt-5"
+        />
+      </div>
+      <h1 class="text-2xl font-semibold text-blue-800 mt-8">Summary</h1>
+      <p>
+        As a graduate with a Bachelor's degree in Informatics Engineering from
+        Budi Luhur University with a GPA of 3.80, I have the ability to
+        collaborate effectively within teams due to my experiences in
+        organizations and committees. I have a strong interest in Web Development.
+        Additionally, I am skilled in using various technologies such as HTML,
+        CSS, JS, React, Node.js, Laravel, and MySQL.
+      </p>
 
-    <h2>Education</h2>
-    <ul>
-      <li>
-        Bachelor's degree in Informatics Engineering – GPA 3.80/4.00 |
-        Specialization: Programming Expert
-      </li>
-    </ul>
+      <h1 class="text-2xl font-semibold text-blue-800 mt-8">Education</h1>
+      <ul>
+        <li>
+          Bachelor's degree in Informatics Engineering – GPA 3.80/4.00 |
+          Specialization: Programming Expert
+        </li>
+      </ul>
 
-    <h2>Work Experience</h2>
-    <ul>
-      <li>
-        <h3>
-          Association of Informatics Engineering Students - Budi Luhur
-          University
-        </h3>
-        <p>
-          Staff of Development and Research Division (January 2019 - December
-          2019)
-        </p>
-        <ul>
-          <li>
-            Responsible for conducting external training at vocational high
-            school (SMK).
-          </li>
-          <li>Responsible for managing the organization's internal website.</li>
-        </ul>
-      </li>
-      <li>
-        <h3>SMK Letris Indonesia 2 – South Tangerang, Indonesia</h3>
-        <p>
-          Productive Teacher of Software Engineering (Academic Year 2022/2023)
-        </p>
-        <ul>
-          <li>
-            Responsible for teaching Software Modeling, Web Programming,
-            Object-Oriented Programming, and Database subjects.
-          </li>
-        </ul>
-      </li>
-    </ul>
-    <h2>Skills</h2>
-    <ul>
-      <li>
-        <h3>Programming</h3>
-        <ul>
-          <li>HTML, CSS, Javascript, PHP, Framework Laravel and MySQL</li>
-        </ul>
-      </li>
-      <li>
-        <h3>Soft Skills</h3>
-        <ul>
-          <li>Time Management, Communication, Public Speaking</li>
-        </ul>
-      </li>
-      <li>
-        <h3>Training and Competencies</h3>
-        <ul>
-          <li>Laravel Web Development (Grade: 92/100) by Sanbercode</li>
-          <li>
-            Basic Computer Algorithm Competency by Faculty of Information
-            Technology - Budi Luhur University.
-          </li>
-        </ul>
-      </li>
-    </ul>
+      <h1 class="text-2xl font-semibold text-blue-800 mt-8">Work Experience</h1>
+      <ul>
+        <li>
+          <h2>
+            Association of Informatics Engineering Students - Budi Luhur
+            University
+          </h2>
+          <p>
+            Staff of Development and Research Division (January 2019 - December
+            2019)
+          </p>
+          <ul>
+            <li>
+              Responsible for conducting external training at vocational high
+              school (SMK).
+            </li>
+            <li>Responsible for managing the organization's internal website.</li>
+          </ul>
+        </li>
+        <li>
+          <h2>SMK Letris Indonesia 2 – South Tangerang, Indonesia</h2>
+          <p>
+            Productive Teacher of Software Engineering (Academic Year 2022/2023)
+          </p>
+          <ul>
+            <li>
+              Responsible for teaching Software Modeling, Web Programming,
+              Object-Oriented Programming, and Database subjects.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h1 class="text-2xl font-semibold text-blue-800 mt-8">Skills</h1>
+      <ul>
+        <li>
+          <h2>Programming</h2>
+          <ul>
+            <li>HTML, CSS, Javascript, PHP, Framework Laravel and MySQL</li>
+          </ul>
+        </li>
+        <li>
+          <h2>Soft Skills</h2>
+          <ul>
+            <li>Time Management, Communication, Public Speaking</li>
+          </ul>
+        </li>
+        <li>
+          <h2>Training and Competencies</h2>
+          <ul>
+            <li>Laravel Web Development (Grade: 92/100) by Sanbercode</li>
+            <li>
+              Basic Computer Algorithm Competency by Faculty of Information
+              Technology - Budi Luhur University.
+            </li>
+          </ul>
+        </li>
+      </ul>
 
-    <a href="./public/myHobby.html">My Hobby</a>
-    <a href="./public/contact.html">Contact Me</a>
+      <nav class="mt-6 text-center space-x-4">
+        <a class="text-blue-600 font-semibold hover:underline" href="./public/myHobby.html">My Hobby</a>
+        <a class="text-blue-600 font-semibold hover:underline" href="./public/contact.html">Contact Me</a>
+      </nav>
 
-    <footer>
-      <center>Copyright © 2023 Dani Juhaeni. All Rights Reserved.</center>
-    </footer>
+      <footer class="mt-10 text-center text-sm text-gray-600">
+        Copyright © 2023 Dani Juhaeni. All Rights Reserved.
+      </footer>
+    </div>
   </body>
 </html>
