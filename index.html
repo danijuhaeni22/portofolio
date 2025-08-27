@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Resume</title>
+    <title>Dani Juhaeni | Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,105 +18,106 @@
             fontFamily: {
               sans: ["Poppins", "sans-serif"],
             },
+            colors: {
+              primary: "#64ffda",
+              dark: "#0a192f",
+            },
           },
         },
       };
     </script>
   </head>
-  <body class="bg-gray-100 text-gray-900 font-sans">
-    <div class="max-w-3xl mx-auto my-10 p-6 bg-white rounded-lg shadow">
-      <div class="text-center">
-        <h1 class="text-3xl font-bold text-blue-800">Dani Juhaeni</h1>
-        <img
-          src="./assets/img/1811501269_foto.jpg"
-          alt="Profil"
-          class="w-48 h-48 object-cover rounded-full mx-auto mt-5"
-        />
-      </div>
-      <h1 class="text-2xl font-semibold text-blue-800 mt-8">Summary</h1>
-      <p>
-        As a graduate with a Bachelor's degree in Informatics Engineering from
-        Budi Luhur University with a GPA of 3.80, I have the ability to
-        collaborate effectively within teams due to my experiences in
-        organizations and committees. I have a strong interest in Web Development.
-        Additionally, I am skilled in using various technologies such as HTML,
-        CSS, JS, React, Node.js, Laravel, and MySQL.
-      </p>
-
-      <h1 class="text-2xl font-semibold text-blue-800 mt-8">Education</h1>
-      <ul>
-        <li>
-          Bachelor's degree in Informatics Engineering – GPA 3.80/4.00 |
-          Specialization: Programming Expert
-        </li>
-      </ul>
-
-      <h1 class="text-2xl font-semibold text-blue-800 mt-8">Work Experience</h1>
-      <ul>
-        <li>
-          <h2>
-            Association of Informatics Engineering Students - Budi Luhur
-            University
-          </h2>
-          <p>
-            Staff of Development and Research Division (January 2019 - December
-            2019)
-          </p>
-          <ul>
-            <li>
-              Responsible for conducting external training at vocational high
-              school (SMK).
-            </li>
-            <li>Responsible for managing the organization's internal website.</li>
-          </ul>
-        </li>
-        <li>
-          <h2>SMK Letris Indonesia 2 – South Tangerang, Indonesia</h2>
-          <p>
-            Productive Teacher of Software Engineering (Academic Year 2022/2023)
-          </p>
-          <ul>
-            <li>
-              Responsible for teaching Software Modeling, Web Programming,
-              Object-Oriented Programming, and Database subjects.
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <h1 class="text-2xl font-semibold text-blue-800 mt-8">Skills</h1>
-      <ul>
-        <li>
-          <h2>Programming</h2>
-          <ul>
-            <li>HTML, CSS, Javascript, PHP, Framework Laravel and MySQL</li>
-          </ul>
-        </li>
-        <li>
-          <h2>Soft Skills</h2>
-          <ul>
-            <li>Time Management, Communication, Public Speaking</li>
-          </ul>
-        </li>
-        <li>
-          <h2>Training and Competencies</h2>
-          <ul>
-            <li>Laravel Web Development (Grade: 92/100) by Sanbercode</li>
-            <li>
-              Basic Computer Algorithm Competency by Faculty of Information
-              Technology - Budi Luhur University.
-            </li>
-          </ul>
-        </li>
-      </ul>
-
-      <nav class="mt-6 text-center space-x-4">
-        <a class="text-blue-600 font-semibold hover:underline" href="./public/myHobby.html">My Hobby</a>
-        <a class="text-blue-600 font-semibold hover:underline" href="./public/contact.html">Contact Me</a>
+  <body class="bg-dark text-gray-300 font-sans">
+    <header class="fixed top-0 w-full bg-dark/80 backdrop-blur border-b border-gray-700">
+      <nav class="max-w-3xl mx-auto p-4 flex justify-end space-x-6 text-sm">
+        <a href="#about" class="hover:text-primary">About</a>
+        <a href="#education" class="hover:text-primary">Education</a>
+        <a href="#experience" class="hover:text-primary">Experience</a>
+        <a href="#skills" class="hover:text-primary">Skills</a>
+        <a href="./public/myHobby.html" class="hover:text-primary">Hobby</a>
+        <a href="./public/contact.html" class="hover:text-primary">Contact</a>
       </nav>
+    </header>
 
-      <footer class="mt-10 text-center text-sm text-gray-600">
-        Copyright © 2023 Dani Juhaeni. All Rights Reserved.
-      </footer>
-    </div>
+    <main class="max-w-3xl mx-auto px-4 pt-24 space-y-24">
+      <section id="about" class="space-y-6">
+        <div class="flex flex-col items-center text-center space-y-4">
+          <img
+            src="./assets/img/1811501269_foto.jpg"
+            alt="Profile"
+            class="w-40 h-40 object-cover rounded-full border-4 border-primary"
+          />
+          <h1 class="text-4xl font-bold text-primary">Dani Juhaeni</h1>
+          <p>
+            As a graduate with a Bachelor's degree in Informatics Engineering
+            from Budi Luhur University with a GPA of 3.80, I have the ability
+            to collaborate effectively within teams due to my experiences in
+            organizations and committees. I have a strong interest in Web
+            Development. Additionally, I am skilled in using various
+            technologies such as HTML, CSS, JS, React, Node.js, Laravel, and
+            MySQL.
+          </p>
+        </div>
+      </section>
+
+      <section id="education" class="space-y-4">
+        <h2 class="text-2xl font-semibold text-primary">Education</h2>
+        <ul class="list-disc pl-6 space-y-1">
+          <li>
+            Bachelor's degree in Informatics Engineering – GPA 3.80/4.00 |
+            Specialization: Programming Expert
+          </li>
+        </ul>
+      </section>
+
+      <section id="experience" class="space-y-4">
+        <h2 class="text-2xl font-semibold text-primary">Work Experience</h2>
+        <ul class="space-y-6">
+          <li>
+            <h3 class="font-semibold">
+              Association of Informatics Engineering Students - Budi Luhur University
+            </h3>
+            <p>Staff of Development and Research Division (January 2019 - December 2019)</p>
+            <ul class="list-disc pl-6 space-y-1">
+              <li>Responsible for conducting external training at vocational high school (SMK).</li>
+              <li>Responsible for managing the organization's internal website.</li>
+            </ul>
+          </li>
+          <li>
+            <h3 class="font-semibold">SMK Letris Indonesia 2 – South Tangerang, Indonesia</h3>
+            <p>Productive Teacher of Software Engineering (Academic Year 2022/2023)</p>
+            <ul class="list-disc pl-6 space-y-1">
+              <li>Responsible for teaching Software Modeling, Web Programming, Object-Oriented Programming, and Database subjects.</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section id="skills" class="space-y-4">
+        <h2 class="text-2xl font-semibold text-primary">Skills</h2>
+        <ul class="space-y-4 list-disc pl-6">
+          <li>
+            <h3 class="font-semibold">Programming</h3>
+            <p>HTML, CSS, Javascript, PHP, Framework Laravel and MySQL</p>
+          </li>
+          <li>
+            <h3 class="font-semibold">Soft Skills</h3>
+            <p>Time Management, Communication, Public Speaking</p>
+          </li>
+          <li>
+            <h3 class="font-semibold">Training and Competencies</h3>
+            <ul class="list-disc pl-6 space-y-1">
+              <li>Laravel Web Development (Grade: 92/100) by Sanbercode</li>
+              <li>Basic Computer Algorithm Competency by Faculty of Information Technology - Budi Luhur University.</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="mt-20 pb-10 text-center text-xs text-gray-500">
+      Copyright © 2023 Dani Juhaeni. All Rights Reserved.
+    </footer>
   </body>
 </html>
+
