@@ -1,2 +1,2 @@
-# portofolio
-Website portofolio sederhana menggunakan html
+# portfolio
+Website portfolio sederhana menggunakan HTML.
