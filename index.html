@@ -1,123 +1,489 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dani Juhaeni | Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ["Poppins", "sans-serif"],
-            },
-            colors: {
-              primary: "#64ffda",
-              dark: "#0a192f",
-            },
-          },
-        },
-      };
-    </script>
-  </head>
-  <body class="bg-dark text-gray-300 font-sans">
-    <header class="fixed top-0 w-full bg-dark/80 backdrop-blur border-b border-gray-700">
-      <nav class="max-w-3xl mx-auto p-4 flex justify-end space-x-6 text-sm">
-        <a href="#about" class="hover:text-primary">About</a>
-        <a href="#education" class="hover:text-primary">Education</a>
-        <a href="#experience" class="hover:text-primary">Experience</a>
-        <a href="#skills" class="hover:text-primary">Skills</a>
-        <a href="./public/myHobby.html" class="hover:text-primary">Hobby</a>
-        <a href="./public/contact.html" class="hover:text-primary">Contact</a>
-      </nav>
-    </header>
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dani Juhaeni — Portfolio</title>
+  <meta name="description" content="Liquid Glass style portfolio — Dani Juhaeni." />
 
-    <main class="max-w-3xl mx-auto px-4 pt-24 space-y-24">
-      <section id="about" class="space-y-6">
-        <div class="flex flex-col items-center text-center space-y-4">
-          <img
-            src="./assets/img/1811501269_foto.jpg"
-            alt="Profile"
-            class="w-40 h-40 object-cover rounded-full border-4 border-primary"
-          />
-          <h1 class="text-4xl font-bold text-primary">Dani Juhaeni</h1>
-          <p>
-            As a graduate with a Bachelor's degree in Informatics Engineering
-            from Budi Luhur University with a GPA of 3.80, I have the ability
-            to collaborate effectively within teams due to my experiences in
-            organizations and committees. I have a strong interest in Web
-            Development. Additionally, I am skilled in using various
-            technologies such as HTML, CSS, JS, React, Node.js, Laravel, and
-            MySQL.
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- Background -->
+  <div class="bg" aria-hidden="true">
+    <div class="orb o1"></div>
+    <div class="orb o2"></div>
+    <div class="orb o3"></div>
+    <div class="noise"></div>
+  </div>
+
+  <header class="header" id="header">
+    <div class="container header__inner liquid" data-tilt>
+      <a class="brand" href="#top" id="top" aria-label="Dani.dev">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span class="brand__text">Dani<span class="muted">.dev</span></span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="nav nav--desktop" aria-label="Primary">
+        <a class="nav__link" href="#about">About</a>
+        <a class="nav__link" href="#projects">Projects</a>
+        <a class="nav__link" href="#experience">Experience</a>
+        <a class="nav__link" href="#skills">Skills</a>
+        <a class="nav__link" href="#contact">Contact</a>
+
+        <button class="btn btn--liquid" id="themeBtn" type="button" aria-label="Toggle theme">
+          <span class="icon" aria-hidden="true">☾</span>
+        </button>
+
+        <a class="btn btn--primary" href="#contact">Hire Me</a>
+      </nav>
+
+      <!-- Mobile actions -->
+      <div class="navMobile" aria-label="Mobile actions">
+        <button class="btn btn--liquid navMobile__theme" id="themeBtnMobile" type="button" aria-label="Toggle theme (mobile)">
+          <span class="icon" aria-hidden="true">☾</span>
+        </button>
+
+        <!-- ✅ CLEAN burger (removed dead spans + no extra closing button) -->
+        <button
+          class="burger liquid"
+          id="burgerBtn"
+          type="button"
+          aria-label="Open menu"
+          aria-controls="mobileMenu"
+          aria-expanded="false"
+        >
+          <svg class="burger__icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path class="burger__p burger__top" d="M5 7H19" />
+            <path class="burger__p burger__mid" d="M5 12H19" />
+            <path class="burger__p burger__bot" d="M5 17H19" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mnav" id="mobileMenu" aria-hidden="true">
+      <div class="mnav__overlay" data-close></div>
+
+      <div class="mnav__panel liquid" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+        <div class="mnav__head">
+          <div class="mnav__brand">
+            <span class="brand__dot" aria-hidden="true"></span>
+            <span class="brand__text">Menu</span>
+          </div>
+
+          <button class="btn btn--liquid" id="mnavClose" type="button" aria-label="Close menu">✕</button>
+        </div>
+
+        <div class="mnav__links">
+          <a class="mnav__link" href="#about">About</a>
+          <a class="mnav__link" href="#projects">Projects</a>
+          <a class="mnav__link" href="#experience">Experience</a>
+          <a class="mnav__link" href="#skills">Skills</a>
+          <a class="mnav__link" href="#contact">Contact</a>
+        </div>
+
+        <div class="mnav__cta">
+          <a class="btn btn--primary" href="#contact">Hire Me</a>
+          <button class="btn btn--liquid" id="mnavCopyEmail" type="button">Copy Email</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="reveal" data-reveal>
+          <p class="kicker liquid">Web Developer</p>
+
+          <h1 class="title">
+            Dani Juhaeni
+            <span class="subtitle">
+              <span id="typing"></span><span class="caret" aria-hidden="true"></span>
+            </span>
+          </h1>
+
+          <p class="lead">
+            Saya membangun web app yang rapi, cepat, dan mudah dirawat.
+            Fokus pada dashboard, API, dan sistem internal.
+          </p>
+
+          <div class="actions">
+            <a class="btn btn--primary" href="#projects">View Projects</a>
+            <a class="btn btn--liquid" href="#experience">View Experience</a>
+            <button class="btn btn--liquid" id="copyEmailBtn" type="button">Copy Email</button>
+          </div>
+
+          <div class="chips">
+            <button class="chip liquid" type="button" data-scrollto="#skills">Stack</button>
+            <button class="chip liquid" type="button" data-scrollto="#projects">Projects</button>
+            <button class="chip liquid" type="button" data-scrollto="#contact">Let’s talk</button>
+          </div>
+        </div>
+
+        <aside class="profile liquid reveal" data-reveal data-tilt aria-label="Profile">
+          <div class="profile__media">
+            <img src="./assets/img/profil.jpeg" alt="Dani Juhaeni" loading="lazy" />
+          </div>
+
+          <div class="profile__body">
+            <div class="profile__top">
+              <p class="profile__name">Dani Juhaeni</p>
+              <p class="profile__role muted">Fullstack Dev</p>
+            </div>
+
+            <div class="tags" aria-label="Top skills">
+              <span class="tag liquid">JavaScript</span>
+              <span class="tag liquid">React</span>
+              <span class="tag liquid">Node.js</span>
+              <span class="tag liquid">Laravel</span>
+            </div>
+
+            <div class="links">
+              <a class="link liquid" href="mailto:danijuhaenimo@gmail.com">Email</a>
+              <a class="link liquid" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+              <a class="link liquid" href="https://linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container narrow">
+        <div class="head reveal" data-reveal>
+          <p class="eyebrow">ABOUT</p>
+          <h2>Clean, calm, reliable.</h2>
+
+          <!-- ✅ personal + nyambung ke experience -->
+          <p class="muted">
+            Saya lulusan S1 Teknik Informatika yang memulai perjalanan profesional dari dunia operasional dan monitoring sistem,
+            hingga kini fokus pada pengembangan web sebagai junior developer.
+            Pengalaman tersebut membentuk cara kerja saya: memahami masalah di lapangan terlebih dahulu,
+            lalu menerjemahkannya menjadi solusi berbasis sistem yang rapi, terstruktur, dan mudah dirawat.
+            Saya banyak mengerjakan dashboard, API, serta tools internal yang membantu tim memantau,
+            menganalisis, dan mempercepat proses kerja sehari-hari.
           </p>
         </div>
-      </section>
 
-      <section id="education" class="space-y-4">
-        <h2 class="text-2xl font-semibold text-primary">Education</h2>
-        <ul class="list-disc pl-6 space-y-1">
-          <li>
-            Bachelor's degree in Informatics Engineering – GPA 3.80/4.00 |
-            Specialization: Programming Expert
-          </li>
-        </ul>
-      </section>
-
-      <section id="experience" class="space-y-4">
-        <h2 class="text-2xl font-semibold text-primary">Work Experience</h2>
-        <ul class="space-y-6">
-          <li>
-            <h3 class="font-semibold">
-              Association of Informatics Engineering Students - Budi Luhur University
-            </h3>
-            <p>Staff of Development and Research Division (January 2019 - December 2019)</p>
-            <ul class="list-disc pl-6 space-y-1">
-              <li>Responsible for conducting external training at vocational high school (SMK).</li>
-              <li>Responsible for managing the organization's internal website.</li>
+        <div class="cards">
+          <article class="card liquid reveal" data-reveal data-tilt>
+            <h3>Yang saya utamakan</h3>
+            <ul class="list">
+              <li>UI konsisten & rapi</li>
+              <li>API jelas & terukur</li>
+              <li>Codebase mudah dirawat</li>
             </ul>
-          </li>
-          <li>
-            <h3 class="font-semibold">SMK Letris Indonesia 2 – South Tangerang, Indonesia</h3>
-            <p>Productive Teacher of Software Engineering (Academic Year 2022/2023)</p>
-            <ul class="list-disc pl-6 space-y-1">
-              <li>Responsible for teaching Software Modeling, Web Programming, Object-Oriented Programming, and Database subjects.</li>
-            </ul>
-          </li>
-        </ul>
-      </section>
+          </article>
 
-      <section id="skills" class="space-y-4">
-        <h2 class="text-2xl font-semibold text-primary">Skills</h2>
-        <ul class="space-y-4 list-disc pl-6">
-          <li>
-            <h3 class="font-semibold">Programming</h3>
-            <p>HTML, CSS, Javascript, PHP, Framework Laravel and MySQL</p>
-          </li>
-          <li>
-            <h3 class="font-semibold">Soft Skills</h3>
-            <p>Time Management, Communication, Public Speaking</p>
-          </li>
-          <li>
-            <h3 class="font-semibold">Training and Competencies</h3>
-            <ul class="list-disc pl-6 space-y-1">
-              <li>Laravel Web Development (Grade: 92/100) by Sanbercode</li>
-              <li>Basic Computer Algorithm Competency by Faculty of Information Technology - Budi Luhur University.</li>
+          <article class="card liquid reveal" data-reveal data-tilt>
+            <h3>Value kerja</h3>
+            <ul class="list">
+              <li>Komunikasi jelas</li>
+              <li>Time management</li>
+              <li>Problem solving</li>
             </ul>
-          </li>
-        </ul>
-      </section>
-    </main>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <footer class="mt-20 pb-10 text-center text-xs text-gray-500">
-      Copyright © 2023 Dani Juhaeni. All Rights Reserved.
-    </footer>
-  </body>
+    <!-- PROJECTS -->
+    <section id="projects" class="section subtle">
+      <div class="container">
+        <div class="head reveal" data-reveal>
+          <p class="eyebrow">PROJECTS</p>
+          <h2>Selected work</h2>
+        </div>
+
+        <div class="grid">
+          <button class="proj liquid reveal" data-reveal data-tilt data-project="tirc" type="button">
+            <div class="proj__top">
+              <h3>ISO8583 Dashboard (TiRC)</h3>
+              <span class="proj__pill liquid">Realtime</span>
+            </div>
+            <p class="proj__desc">Monitoring transaksi ISO-8583 + ingest log & chart realtime.</p>
+            <div class="proj__meta">
+              <span class="mini liquid">Node</span>
+              <span class="mini liquid">Chart.js</span>
+              <span class="mini liquid">Logs</span>
+            </div>
+          </button>
+
+          <button class="proj liquid reveal" data-reveal data-tilt data-project="pos" type="button">
+            <div class="proj__top">
+              <h3>POS & Inventory</h3>
+              <span class="proj__pill liquid">App</span>
+            </div>
+            <p class="proj__desc">POS + stok multi-lokasi + movement + audit log.</p>
+            <div class="proj__meta">
+              <span class="mini liquid">Next.js</span>
+              <span class="mini liquid">MongoDB</span>
+              <span class="mini liquid">UI</span>
+            </div>
+          </button>
+
+          <button class="proj liquid reveal" data-reveal data-tilt data-project="expense" type="button">
+            <div class="proj__top">
+              <h3>Expense Tracker</h3>
+              <span class="proj__pill liquid">Personal</span>
+            </div>
+            <p class="proj__desc">Dashboard pengeluaran mingguan/bulanan dengan chart.</p>
+            <div class="proj__meta">
+              <span class="mini liquid">JS</span>
+              <span class="mini liquid">Charts</span>
+              <span class="mini liquid">Local</span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="container narrow">
+        <div class="head reveal" data-reveal>
+          <p class="eyebrow">EXPERIENCE</p>
+          <h2>Timeline</h2>
+          <p class="muted">Ringkas, jelas, dan fokus ke impact.</p>
+        </div>
+
+        <div class="timeline liquid" id="timeline" data-tilt>
+          <ol class="timeline__list" aria-label="Work timeline">
+
+            <!-- PT Permata Utama Media -->
+            <li class="event liquid reveal" data-reveal>
+              <div class="event__dot" aria-hidden="true"></div>
+              <header class="event__header">
+                <div class="event__who">
+                  <strong class="event__company">PT Permata Utama Media</strong>
+                  <div class="event__role">Junior Developer</div>
+                </div>
+                <div class="event__when">
+                  <span class="event__range">2024–Sekarang</span>
+                </div>
+              </header>
+
+              <div class="event__meta">
+                <span class="pill">Internal Tools</span>
+                <span class="pill">Dashboard</span>
+                <span class="pill">Monitoring</span>
+              </div>
+
+              <!-- ✅ paraphrase -->
+              <ul class="event__bullets">
+                <li>
+                  Mengembangkan tools berbasis web untuk kebutuhan internal divisi,
+                  dengan tujuan menyederhanakan proses kerja dan meningkatkan visibilitas data operasional.
+                </li>
+                <li>
+                  Membangun dashboard monitoring transaksi harian sebagai alat bantu awal
+                  untuk mendeteksi kondisi sistem, baik normal maupun saat terjadi kendala.
+                </li>
+                <li>
+                  Mengimplementasikan fitur analisis tren transaksi, seperti perbandingan hari ini vs kemarin
+                  serta hari ini vs rata-rata 7 hari, agar tim lebih mudah membaca pola dan perubahan data.
+                </li>
+              </ul>
+            </li>
+
+            <!-- PT Omni Inovasi Indonesia -->
+            <li class="event liquid reveal" data-reveal>
+              <div class="event__dot" aria-hidden="true"></div>
+              <header class="event__header">
+                <div class="event__who">
+                  <strong class="event__company">PT Omni Inovasi Indonesia</strong>
+                  <div class="event__role">Staf IT Helpdesk</div>
+                </div>
+                <div class="event__when">
+                  <span class="event__range">2023–2024</span>
+                </div>
+              </header>
+
+              <div class="event__meta">
+                <span class="pill">Monitoring</span>
+                <span class="pill">Coordination</span>
+                <span class="pill">Daily Report</span>
+              </div>
+
+              <!-- ✅ paraphrase -->
+              <ul class="event__bullets">
+                <li>
+                  Memantau dan menangani kendala transaksi harian dengan berkoordinasi bersama tim internal dan pihak terkait
+                  agar proses dapat segera ditindaklanjuti.
+                </li>
+                <li>
+                  Menjadi penghubung komunikasi antara tim operasional dan mitra dalam memberikan update status transaksi
+                  saat terjadi gangguan.
+                </li>
+                <li>
+                  Menyusun laporan harian sebagai dokumentasi kondisi sistem dan progres penyelesaian kendala operasional.
+                </li>
+              </ul>
+            </li>
+
+            <!-- SMK Letris Indonesia 2 -->
+            <li class="event liquid reveal" data-reveal>
+              <div class="event__dot" aria-hidden="true"></div>
+              <header class="event__header">
+                <div class="event__who">
+                  <strong class="event__company">SMK Letris Indonesia 2</strong>
+                  <div class="event__role">Guru Produktif RPL</div>
+                </div>
+                <div class="event__when">
+                  <span class="event__range">2022–2023</span>
+                </div>
+              </header>
+
+              <div class="event__meta">
+                <span class="pill">Teaching</span>
+                <span class="pill">Curriculum</span>
+                <span class="pill">Mentoring</span>
+              </div>
+
+              <!-- ✅ paraphrase -->
+              <ul class="event__bullets">
+                <li>
+                  Mengajar Web Programming, OOP, Software Modeling, dan Database dengan pendekatan praktik
+                  serta penguatan konsep dasar.
+                </li>
+                <li>
+                  Membimbing siswa memahami alur berpikir pengembangan aplikasi, mulai dari logika, struktur kode,
+                  hingga implementasi sederhana.
+                </li>
+              </ul>
+            </li>
+
+            <!-- HMTI -->
+            <li class="event liquid reveal" data-reveal>
+              <div class="event__dot" aria-hidden="true"></div>
+              <header class="event__header">
+                <div class="event__who">
+                  <strong class="event__company">HMTI — Universitas Budi Luhur</strong>
+                  <div class="event__role">Staff Divisi Pengembangan & Riset</div>
+                </div>
+                <div class="event__when">
+                  <span class="event__range">2019</span>
+                </div>
+              </header>
+
+              <div class="event__meta">
+                <span class="pill">Community</span>
+                <span class="pill">Research</span>
+                <span class="pill">Web Internal</span>
+              </div>
+
+              <!-- ✅ paraphrase -->
+              <ul class="event__bullets">
+                <li>
+                  Terlibat dalam pengembangan website internal organisasi serta mendukung pelaksanaan pelatihan
+                  dan kegiatan riset skala internal.
+                </li>
+              </ul>
+            </li>
+
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section subtle">
+      <div class="container narrow">
+        <div class="head reveal" data-reveal>
+          <p class="eyebrow">SKILLS</p>
+          <h2>Stack</h2>
+        </div>
+
+        <div class="skillset">
+          <div class="skill liquid reveal" data-reveal data-tilt>
+            <h3>Frontend</h3>
+            <p class="muted">HTML, CSS, JavaScript, React</p>
+          </div>
+          <div class="skill liquid reveal" data-reveal data-tilt>
+            <h3>Backend</h3>
+            <p class="muted">Node.js, Laravel, PHP</p>
+          </div>
+          <div class="skill liquid reveal" data-reveal data-tilt>
+            <h3>Database</h3>
+            <p class="muted">MySQL</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container narrow">
+        <div class="head reveal" data-reveal>
+          <p class="eyebrow">CONTACT</p>
+          <h2>Let’s work together</h2>
+          <p class="muted">Tekan <kbd>Ctrl</kbd> + <kbd>K</kbd> untuk command palette.</p>
+        </div>
+
+        <div class="contact liquid reveal" data-reveal data-tilt>
+          <a class="contact__a" href="mailto:danijuhaenimo@gmail.com">danijuhaenimo@gmail.com</a>
+          <div class="contact__row">
+            <a class="btn btn--liquid" href="https://github.com/danijuhaeni22" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn btn--liquid" href="https://www.linkedin.com/in/dani-juhaeni/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <button class="btn btn--primary" type="button" id="contactCopyBtn">Copy Email</button>
+          </div>
+        </div>
+
+        <footer class="footer muted">
+          © <span id="year"></span> Dani Juhaeni
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <!-- Floating actions -->
+  <div class="fab" aria-label="Quick actions">
+    <button class="fab__btn liquid" id="fabTop" type="button" title="Back to top">↑</button>
+    <button class="fab__btn liquid" id="fabPalette" type="button" title="Command palette">⌘K</button>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast liquid" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Project Modal -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal__panel liquid" role="dialog" aria-modal="true" aria-labelledby="modalTitle" data-tilt>
+      <div class="modal__head">
+        <h3 id="modalTitle">Project</h3>
+        <button class="btn btn--liquid" id="modalClose" type="button" aria-label="Close">✕</button>
+      </div>
+      <div class="modal__body" id="modalBody"></div>
+      <div class="modal__foot">
+        <a class="btn btn--liquid" id="modalLink" href="#" target="_blank" rel="noreferrer">Open</a>
+        <button class="btn btn--primary" id="modalCopy" type="button">Copy stack</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Command Palette -->
+  <div class="palette" id="palette" aria-hidden="true">
+    <div class="palette__panel liquid" role="dialog" aria-modal="true" aria-label="Command palette" data-tilt>
+      <div class="palette__top">
+        <input class="palette__input" id="paletteInput" type="text" placeholder="Type a command… (e.g. projects, email)" autocomplete="off" />
+        <span class="palette__hint muted">ESC</span>
+      </div>
+      <ul class="palette__list" id="paletteList"></ul>
+    </div>
+  </div>
+
+  <script src="./main.js"></script>
+</body>
 </html>
-
